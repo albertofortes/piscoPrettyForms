@@ -1,0 +1,16 @@
+/* TEAM */
+Web designer & Front End developer: Alberto Fortes
+Site: http://www.albertofortes.com
+Contact: info@albertofortes.com
+Twitter: @albertofs
+Location: Seville, Andalusia, Spain
+
+                
+/* SITE */
+Last update: 2013/09/11
+Standards: HTML5, CSS3,..
+Components: jQuery, etc.
+Software: Photoshop CS5, Coda, MacOS X, MAMP
+
+
+                    

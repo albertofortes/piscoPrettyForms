@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Pisco Pretty Forms, simple and easy way to add custom design to forms elements like selects, radius and checkboxes</title>
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<link rel="stylesheet" type="text/css" href="assets/css/pisco-formwork.css" />
+<link rel="stylesheet" type="text/css" href="assets/css/minimalistic.formwork.css" />
+<link rel="stylesheet" type="text/css" href="assets/css/pisco.prettyforms.css" />
+<link rel="author" href="humans.txt" />
+<script type="text/javascript" src="assets/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="assets/js/pisco.prettyforms.1.0.0.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery.scrollTo-1.4.2-min.js"></script>
+<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+<body>
+<div class="wrapper">
+	<aside class="grid3 f-l">
+		<h1 class="logo">Pisco Tooltip</h1>
+		<nav>
+			<ul>
+				<li><a href="#" title="" class="intro">Intro</a></li>
+				<li><a href="#" title="" class="uso-select">Uso para selects</a></li>
+				<li><a href="#" title="" class="opciones-select">Opciones del plugin para selects</a></li>
+				<li><a href="#" title="" class="uso-radio">Uso para radio buttons</a></li>
+				<li><a href="#" title="" class="uso-checkboxes">Uso para checkboxes</a></li>
+				<li><a href="#" title="" class="descarga">Descarga</a></li>
+			</ul>
+		</nav>
+	</aside>
+	<article class="content grid9 f-r">
+		<header>
+			<h1 class="mbxl">Una forma simple y sencilla de añadir tus diseños personalizados a los elementos de formularios que no permiten CSS, como selects, inputs radios y checkboxes.</h1>
+		</header>
+		<section class="post intro">
+			<h3>Intro</h3>
+			<p>Pisco pretty Forms permite añadir tus propios diseños a los selects de un formulario así como a las casillas de verificación (inputs radios y checkboxes)</p>
+			<p>No es el único que existe, pero si está a la par con el más ligero y sencillo de usar. Es simplemente una elección más.</p>
+		</section>
+		<section class="post uso-select">
+			<h3>Uso para 'selects'</h3>
+			<p>El uso básico es muy simple, añade la clase que dispara el plugin a tu select y llámalo:</p>
+			
+			<code>
+				<pre>
+&lt;select class="prettyForm" data-title="Elige tu deporte favorito">
+   &lt;option value="1">Ciclismo&lt;/option>
+   &lt;option value="2">Fútbol&lt;/option>
+   &lt;option value="3">Natación&lt;/option>
+   &lt;option value="4">Running&lt;/option>
+   &lt;option value="5">Baloncesto&lt;/option>
+&lt;/select>
+
+&lt;select class="prettyForm">
+   &lt;option data-first="title">Con qué frecuencia lo practicas?&lt;/option>
+   &lt;option value="1">1 vez al mes&lt;/option>
+   &lt;option value="2">De 2 a 5 veces almes&lt;/option>
+   &lt;option value="3">Más de dos veces a la semana&lt;/option>
+   &lt;option value="4">Todos los días&lt;/option>
+&lt;/select>
+
+&lt;script>
+$('.prettyForm').piscoPrettyForms();
+&lt;/script>
+</pre>
+			</code>
+			
+			<p>Por defecto busca en el select el atributo data-title para ponerlo como titulo del mismo, pero si este no está, se usará el primer option. Para no duplicar información, el sscript eliminará el option que tenga el atributo data-first. Se trata de dos forms de hacer lo mismo para elegir la que mejor se adapte a tu proyecto.</p>
+			
+			<p>
+				<select class="prettyForm" data-title="Elige tu deporte favorito">
+				    <option value="1">Ciclismo</option>
+				    <option value="2">Fútbol</option>
+				    <option value="3">Natación</option>
+				    <option value="4">Running</option>
+				    <option value="5">Baloncesto</option>
+				</select>
+			</p>
+			
+			<p>
+				<select class="prettyForm">
+				    <option data-first="title">Con qué frecuencia lo practicas?</option>
+				    <option value="1">1 vez al mes</option>
+				    <option value="2">De 2 a 5 veces almes</option>
+				    <option value="3">Más de dos veces a la semana</option>
+				    <option value="4">Todos los días</option>
+				</select>
+			</p>
+
+		</section>
+		
+		<section class="post opciones-select">
+		
+			<h3>Opciones para 'selects'</h3>
+			
+			<p>Por defecto el tamaño del selector es automático, adaptado al tamaño de la cadena de texto del título más el relleno y la flechita. No obstante se puede poner un tamaño fijo:</p>
+
+			<code>
+				<pre>&lt;script>
+$('.prettyForm-fixedSize').piscoPrettyForms({
+	selectWidth: 350
+})
+&lt;/script>
+</pre>
+			</code>
+			
+			<p>
+				<select class="prettyForm-fixedSize" data-title="Sueles tomas complementos alimenticios?">
+				    <option value="1">Nunca</option>
+				    <option value="2">A veces</option>
+				    <option value="3">Regularmente</option>
+				</select>
+			</p>
+			
+			<p>O si necesitas más control, y diseños personalizados, puedes añadirle una clase personalizada y darle estilos por CSS:</p>
+			
+			<code>
+				<pre>$('.prettyForm-customClass').piscoPrettyForms({
+	customClass: 'custom-class'
+});&lt;/script>
+</pre>
+			</code>
+			
+			<p>
+				<select class="prettyForm-customClass" data-title="Sigues algún plan de entrenamiento?">
+				    <option value="1">Voy a mi rollo</option>
+				    <option value="2">Sigo el plan que me dio mi monitor</option>
+				    <option value="3">Uso páginas web para hacer un seguimiento de mis entrenamientos</option>
+				</select>
+			</p>
+		
+		</section>
+		
+		<section class="post uso-radios">
+		
+			<h3>Uso para 'radio buttons'</h3>
+			<p>El uso básico es muy simple, añade la clase que dispara el plugin a tu input radio y llámalo. Los estilos del mismo puedes modificarlos directamente por CSS:</p>
+			
+			<code>
+				<pre>&lt;script>
+$('.prettyForm').piscoPrettyForms();
+&lt;/script>
+</pre>
+			</code>
+			
+			<p>
+				<input type="radio" name="federado" id="federado-si" class="prettyForm" value="si" /> <label for="federado-si">Si estoy federado</label>
+				<br /><br />
+				<input type="radio" name="federado" id="federado-no" class="prettyForm" value="no" /> <label for="federado-no">No estoy federado</label>
+				<br /><br />
+				<input type="radio" name="federado" id="federado-quiza" class="prettyForm" value="quiza" /> <label for="federado-quiza">Estoy pensando en federarme</label>
+			</p>
+			
+			<p>Y también puedes añadir una clase personalizada por si lo necesitas:</p>
+			
+			<code>
+				<pre>&lt;script>
+$('.prettyForm-radioCustom').piscoPrettyForms({
+   customClass: 'radioCustom'
+});
+&lt;/script>
+</pre>
+			</code>
+			
+			<p>
+				<input type="radio" name="elite" id="elite-si" class="prettyForm-radioCustom" value="si" /> <label for="federado-si">Soy deportista de élite</label>
+				<br /><br />
+				<input type="radio" name="elite" id="elite-no" class="prettyForm-radioCustom" value="no" /> <label for="federado-no">No soy deportista de élite</label>
+			</p>
+			
+		</section>
+		
+		<section class="post uso-radios">
+		
+			<h3>Uso para 'checkboxes (casillas de verificación'</h3>
+			<p>Al igual que en el caso de lso radio buttons, añade la clase que dispara el plugin a tu input radio y llámalo. Los estilos del mismo puedes modificarlos directamente por CSS:</p>
+			
+			<code>
+				<pre>&lt;script>
+$('.prettyForm').piscoPrettyForms();
+&lt;/script>
+</pre>
+			</code>
+			
+			<p>Deportes que practico:</p>
+			<p>
+				<input type="checkbox" id="practico-ciclismo" class="prettyForm" value="practico-ciclismo" /> <label for="practico-ciclismo">Ciclismo</label>
+				<br /><br />
+				<input type="checkbox" id="practico-duatlon" class="prettyForm" value="practico-duatlon" /> <label for="practico-duatlon">Duatlón</label>
+				<br /><br />
+				<input type="checkbox" id="practico-natacion" class="prettyForm" value="practico-natacion" /> <label for="practico-natacion">Natación</label>
+				<br /><br />
+				<input type="checkbox" id="practico-running" class="prettyForm" value="practico-running" /> <label for="practico-running">Running</label>
+				<br /><br />
+				<input type="checkbox" id="practico-triatlon" class="prettyForm" value="practico-triatlon" /> <label for=practico-triatlon"">Triatlón</label>
+			</p>
+			
+			<p>Para añadir una clase personalizada:</p>
+			
+			<code>
+				<pre>&lt;script>
+$('.prettyForm-checkboxCustom').piscoPrettyForms({
+   customClass: 'checkCustom'
+});
+&lt;/script>
+</pre>
+			</code>
+			
+			<p>Pruebas ciclistas que sigo por los medios:</p>
+			<p>
+				<input type="checkbox" id="veo-tour" class="prettyForm-checkboxCustom" value="veo-tour" /> <label for="veo-tour">Tour de Francia</label>
+				<br /><br />
+				<input type="checkbox" id="veo-vuelta" class="prettyForm-checkboxCustom" value="veo-vuelta" /> <label for="veo-vuelta">La vuelta a España</label>
+				<br /><br />
+				<input type="checkbox" id="veo-giro" class="prettyForm-checkboxCustom" value="veo-giro" /> <label for="veo-giro">Giro de Italia</label>
+				<br /><br />
+				<input type="checkbox" id="veo-tirreno" class="prettyForm-checkboxCustom" value="veo-tirreno" /> <label for="veo-tirreno">Tirreno Adriática</label>
+				<br /><br />
+				<input type="checkbox" id="veo-flandes" class="prettyForm-checkboxCustom" value="veo-flandes" /> <label for="veo-flandes">Vuelta a Flandes</label>
+			</p>
+			
+		</section>
+		
+		<section class="post descarga">
+			<h3>Descarga</h3>
+			<p>Descárga el plugin o haz un fork en Github: <a href="https://github.com/albertofortes/piscotooltip" target="_blank">github.com/albertofortes/piscoprettyforms</a></p>
+		</section>
+		
+		<footer>
+			<a href="http://www.albertofortes.com" title="Freelance Front End developer">Alberto Fortes</a>, septiembre de 2013. Pisco pretty Forms usa el Framework <a href="http://www.piscolabis.es/proyectos/piscoformwork" title="Sencillo framework CSS, HTML5 y Javascript">PiscoFormWork</a> y el theme Minimalistic para Pisco FormWork.
+		</footer>
+	</article>
+</div><!--wrapper-->
+<script>
+
+$('.prettyForm').piscoPrettyForms();
+
+$('.prettyForm-fixedSize').piscoPrettyForms({
+	selectWidth: 350
+});
+
+$('.prettyForm-customClass').piscoPrettyForms({
+	customClass: 'custom-class'
+});
+
+$('.prettyForm-radioCustom').piscoPrettyForms({
+	customClass: 'radioCustom'
+});
+
+$('.prettyForm-checkboxCustom').piscoPrettyForms({
+	customClass: 'checkCustom'
+});
+
+$('nav a.intro').click(function(){
+	$('body').scrollTo($('section.intro'), 500 );
+	return false;
+});
+$('nav a.uso-select').click(function(){
+	$('body').scrollTo($('section.uso-select'), 500 );
+	return false;
+});
+$('nav a.opciones-select').click(function(){
+	$('body').scrollTo($('section.opciones-select'), 500 );
+	return false;
+});
+$('nav a.descarga').click(function(){
+	$('body').scrollTo($('section.descarga'), 500 );
+	return false;
+});
+
+</script>
+
+</body>
+</html>

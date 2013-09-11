@@ -1,0 +1,23 @@
+/* ---------------------------------
+	Theme: minimalistic for Formworks
+	Formworks v.1
+	minimal grid system and ooCSS framework
+	Author: Alberto Fortes
+	Date: v.1, June 2012. 
+	Author Uri: www.albertofortes.com
+	email: hola@albertofortes.com
+---------------------------------- */
+a {color: #2F6CBD}
+a:hover {color: #93B01A}
+.wrapper {margin: 20px auto;}
+.logo {font-family: 'Arial Narrow', sans-serif; margin-bottom: 25px; font-size: 36px;}
+aside {position: fixed;}
+aside nav > ul	{font-size: 1.3em;}
+aside nav > ul > li {margin-bottom: 1px;}
+aside nav > ul > li > a {display: block; padding: 5px 10px; color:#fff; background-color: #9d9494; text-decoration: none;}
+aside nav > ul > li > a:hover {background-color: #93B01A; color:#fff;}
+article .post {font-size: 1.3em; border-bottom: 1px dotted #777; margin-bottom: 20px;}
+article .post h3, article .post h4 {margin-bottom: 5px;}
+article .post p, article .post ul {margin-bottom: 10px;}
+.grid-system-example > div {background: #e8e8e8; padding: 5px 0; margin-bottom: 7px; text-align: center;}
+article footer {padding: 10px 0 20px; font-size: 1.3em; color:#666;}
