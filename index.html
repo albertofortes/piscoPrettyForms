@@ -31,7 +31,7 @@
 	</aside>
 	<article class="content grid9 f-r">
 		<header>
-			<h1 class="mbxl">Una forma simple y sencilla de añadir tus diseños personalizados a los elementos de formularios que no permiten CSS, como selects, inputs radios y checkboxes.</h1>
+			<h1 class="mbxl">Una forma simple y sencilla de añadir tus diseños personalizados a los elementos de formularios que no permiten CSS, como selects, inputs radios y checkboxes. <strong>Funciona sin usar links ni listas, sino que usa el propio select, radio o checkbox nativo</strong>.</h1>
 		</header>
 		<section class="post intro">
 			<h3>Intro</h3>
@@ -66,7 +66,19 @@ $('.prettyForm').piscoPrettyForms();
 </pre>
 			</code>
 			
-			<p>Por defecto busca en el select el atributo data-title para ponerlo como titulo del mismo, pero si este no está, se usará el primer option. Para no duplicar información, el sscript eliminará el option que tenga el atributo data-first. Se trata de dos forms de hacer lo mismo para elegir la que mejor se adapte a tu proyecto.</p>
+			<p>Un select sin el plugin funcionando:</p>
+			
+			<p>
+				<select>
+				    <option>selecciona tu edad</option>
+				    <option value="1">Menos de 18 años</option>
+				    <option value="2">18 a 30 años</option>
+				    <option value="3">30 a 50 años</option>
+				    <option value="4">Más de 51 años</option>
+				</select>
+			</p>
+			
+			<p>El plugin por defecto busca en el select el atributo data-title para ponerlo como titulo del mismo, pero si este no está, se usará el primer option. Para no duplicar información, el sscript eliminará el option que tenga el atributo data-first. Se trata de dos forms de hacer lo mismo para elegir la que mejor se adapte a tu proyecto.</p>
 			
 			<p>
 				<select class="prettyForm" data-title="Elige tu deporte favorito">
