@@ -6,7 +6,7 @@ jQuery.fn.piscoPrettyForms = function(options) {
 		customClass: 'default'
 	}
 	
-	var options = $.extend(defaults, options);
+	options = $.extend(defaults, options);
 	
 	$(this).each(function() {
 	
@@ -23,7 +23,7 @@ jQuery.fn.piscoPrettyForms = function(options) {
 			
 				// title on span:
 				
-				title = $this.data('title');
+				var title = $this.data('title');
 				if(!title) title = $this.children('option:first-child').text();
 				
 				$this.find('option[data-first="title"]').remove();
@@ -61,14 +61,14 @@ jQuery.fn.piscoPrettyForms = function(options) {
 				
 				//get type of input:
 				var inputType = $this.attr('type');
-				
+				var $thisPrettyLabel;
 				switch(inputType) {
 				
 					// is a radio button:
 					case 'radio':
 					
 						$this.addClass('prettyFormHide').before('<span class="prettyFormRadio"></span>');
-						$thisPrettyRadio = $this.prev('span.prettyFormRadio');
+						var $thisPrettyRadio = $this.prev('span.prettyFormRadio');
 						$thisPrettyLabel = $this.next('label');
 						
 						if(options.customClass!='default') $thisPrettyRadio.addClass(options.customClass);
@@ -91,7 +91,7 @@ jQuery.fn.piscoPrettyForms = function(options) {
 					case 'checkbox':
 					
 						$this.addClass('prettyFormHide').before('<span class="prettyFormCheckbox"></span>');
-						$thisPrettyCheckbox = $this.prev('span.prettyFormCheckbox');
+						var $thisPrettyCheckbox = $this.prev('span.prettyFormCheckbox');
 						$thisPrettyLabel = $this.next('label');
 						
 						if(options.customClass!='default') $thisPrettyCheckbox.addClass(options.customClass);
@@ -120,15 +120,17 @@ jQuery.fn.piscoPrettyForms = function(options) {
 	});
 	
 	var radioClick = function($this){
-		
+		var $itsRadio;
 		if($this.get(0).tagName == 'SPAN') {
 			$itsRadio = $this.next('input');			
 		} else if($this.get(0).tagName == 'LABEL') {
 			$itsRadio = $this.prev('input');
+		} else {
+			return;
 		}
 		
-		familyName = $itsRadio.attr('name');
-		brothers = $('input[name="' + familyName + '"]').prev('span.prettyFormRadio');
+		var familyName = $itsRadio.attr('name');
+		var brothers = $('input[name="' + familyName + '"]').prev('span.prettyFormRadio');
 		
 		if($itsRadio.not(':checked')){
 			$itsRadio.prop('checked',true);
@@ -141,11 +143,13 @@ jQuery.fn.piscoPrettyForms = function(options) {
 	};
 	
 	var checkboxClick = function($this){
-	
+		var $itsCheckbox;
 		if($this.get(0).tagName == 'SPAN') {
 			$itsCheckbox = $this.next('input');			
 		} else if($this.get(0).tagName == 'LABEL') {
 			$itsCheckbox = $this.prev('input');
+		} else {
+			return;
 		}
 		
 		if($itsCheckbox.is(':checked')) {
