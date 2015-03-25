@@ -133,11 +133,11 @@ jQuery.fn.piscoPrettyForms = function(options) {
 		var brothers = $('input[name="' + familyName + '"]').prev('span.prettyFormRadio');
 		
 		if($itsRadio.not(':checked')){
-			$itsRadio.prop('checked',true);
+			$itsRadio.prop('checked',true).trigger("change");
 			brothers.removeClass('on');
 			$itsRadio.prev('span').addClass('on');
 		} else {
-			$itsRadio.prop('checked',false);
+			$itsRadio.prop('checked',false).trigger("change");
 		}
 		
 	};
@@ -153,10 +153,10 @@ jQuery.fn.piscoPrettyForms = function(options) {
 		}
 		
 		if($itsCheckbox.is(':checked')) {
-			$itsCheckbox.prop('checked',false);
+			$itsCheckbox.prop('checked',false).trigger("change");
 			$itsCheckbox.prev('span').removeClass('on');
 		} else {
-			$itsCheckbox.prop('checked',true);
+			$itsCheckbox.prop('checked',true).trigger("change");
 			$itsCheckbox.prev('span').addClass('on');
 		}
 		
